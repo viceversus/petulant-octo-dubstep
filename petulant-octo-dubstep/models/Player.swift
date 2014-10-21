@@ -9,10 +9,10 @@
 import Foundation
 import CoreLocation
 
-
 class Player {
     var locationManager: CLLocationManager!
     var location: CLLocation
+    var name: String?
     
     init() {
         location = locationManager.location

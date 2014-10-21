@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		474F87D919F6E5BC00354247 /* NewPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F87D819F6E5BC00354247 /* NewPlayerController.swift */; };
+		474F87DB19F6F9C300354247 /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474F87DA19F6F9C300354247 /* GameMaster.swift */; };
+		47B5BC8A19F7038100A2B6AC /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B5BC8919F7038100A2B6AC /* World.swift */; };
 		59C386ADF825D40E94FCDDC4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E723455E7687BD6C0D6A9966 /* libPods.a */; };
 		A334F7D019F6DFED009BA78D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A334F7CF19F6DFED009BA78D /* Player.swift */; };
 		A3D1FE7F19F6E0CC00F40784 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE7E19F6E0CC00F40784 /* Monster.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		474F87D819F6E5BC00354247 /* NewPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayerController.swift; sourceTree = "<group>"; };
+		474F87DA19F6F9C300354247 /* GameMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
+		47B5BC8919F7038100A2B6AC /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		637B9105724CC0DF19A6C5F3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A334F7CF19F6DFED009BA78D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A3D1FE7E19F6E0CC00F40784 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				A3D1FE7E19F6E0CC00F40784 /* Monster.swift */,
 				A3D1FE8019F6E0EF00F40784 /* Region.swift */,
 				A3D1FE8219F6E11E00F40784 /* Battlefield.swift */,
+				474F87DA19F6F9C300354247 /* GameMaster.swift */,
+				47B5BC8919F7038100A2B6AC /* World.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -307,9 +313,11 @@
 			files = (
 				A3D1FE7F19F6E0CC00F40784 /* Monster.swift in Sources */,
 				A334F7D019F6DFED009BA78D /* Player.swift in Sources */,
+				474F87DB19F6F9C300354247 /* GameMaster.swift in Sources */,
 				BEF7BE6D19F6D80F0003C675 /* SecondViewController.swift in Sources */,
 				A3D1FE8119F6E0EF00F40784 /* Region.swift in Sources */,
 				BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */,
+				47B5BC8A19F7038100A2B6AC /* World.swift in Sources */,
 				BEF7BE6B19F6D80F0003C675 /* FirstViewController.swift in Sources */,
 				A3D1FE8319F6E11E00F40784 /* Battlefield.swift in Sources */,
 				474F87D919F6E5BC00354247 /* NewPlayerController.swift in Sources */,
