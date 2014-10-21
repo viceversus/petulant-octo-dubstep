@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		59C386ADF825D40E94FCDDC4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E723455E7687BD6C0D6A9966 /* libPods.a */; };
+		A334F7D019F6DFED009BA78D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A334F7CF19F6DFED009BA78D /* Player.swift */; };
+		A3D1FE7F19F6E0CC00F40784 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE7E19F6E0CC00F40784 /* Monster.swift */; };
+		A3D1FE8119F6E0EF00F40784 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8019F6E0EF00F40784 /* Region.swift */; };
+		A3D1FE8319F6E11E00F40784 /* Battlefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8219F6E11E00F40784 /* Battlefield.swift */; };
 		BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */; };
 		BEF7BE6B19F6D80F0003C675 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6A19F6D80F0003C675 /* FirstViewController.swift */; };
 		BEF7BE6D19F6D80F0003C675 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6C19F6D80F0003C675 /* SecondViewController.swift */; };
@@ -29,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		637B9105724CC0DF19A6C5F3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A334F7CF19F6DFED009BA78D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A3D1FE7E19F6E0CC00F40784 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		A3D1FE8019F6E0EF00F40784 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		A3D1FE8219F6E11E00F40784 /* Battlefield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Battlefield.swift; sourceTree = "<group>"; };
 		BEF7BE6319F6D80F0003C675 /* petulant-octo-dubstep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "petulant-octo-dubstep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF7BE6719F6D80F0003C675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +100,10 @@
 		A3225B6B19F6DF28001CB749 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				A334F7CF19F6DFED009BA78D /* Player.swift */,
+				A3D1FE7E19F6E0CC00F40784 /* Monster.swift */,
+				A3D1FE8019F6E0EF00F40784 /* Region.swift */,
+				A3D1FE8219F6E11E00F40784 /* Battlefield.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -290,9 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D1FE7F19F6E0CC00F40784 /* Monster.swift in Sources */,
+				A334F7D019F6DFED009BA78D /* Player.swift in Sources */,
 				BEF7BE6D19F6D80F0003C675 /* SecondViewController.swift in Sources */,
+				A3D1FE8119F6E0EF00F40784 /* Region.swift in Sources */,
 				BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */,
 				BEF7BE6B19F6D80F0003C675 /* FirstViewController.swift in Sources */,
+				A3D1FE8319F6E11E00F40784 /* Battlefield.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

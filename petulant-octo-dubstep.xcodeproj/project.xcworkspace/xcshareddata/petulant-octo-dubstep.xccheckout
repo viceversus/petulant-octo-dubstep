@@ -14,11 +14,11 @@
 		<string>github.com:viceversus/petulant-octo-dubstep.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>petulant-octo-dubstep/petulant-octo-dubstep.xcodeproj</string>
+	<string>petulant-octo-dubstep.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F0EAD5089DA848D6A372ED62B6439AE3346DEA39</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:viceversus/petulant-octo-dubstep.git</string>
