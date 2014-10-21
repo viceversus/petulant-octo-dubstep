@@ -11,10 +11,11 @@ import CoreLocation
 
 class PODPlayer {
     var locationManager: CLLocationManager!
-    var location: CLLocation
+    var location: CLLocation?
     var name: String?
     
     init() {
+        locationManager = CLLocationManager()
         location = locationManager.location
     }
 }

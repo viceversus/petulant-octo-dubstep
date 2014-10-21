@@ -10,8 +10,8 @@ import Foundation
 
 class GameMaster {
     var players:[PODPlayer] = []
-    
-    func addPlayer(name:NSString) -> PODPlayer {
+
+    class func addPlayer(name:NSString) -> PODPlayer {
         var player = PODPlayer()
         player.name = name
         World.players.append(player)

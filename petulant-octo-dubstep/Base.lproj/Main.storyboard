@@ -118,15 +118,6 @@
                                     <action selector="nameEntered:" destination="jdE-hK-EiP" eventType="editingDidEndOnExit" id="KXO-ac-Gb8"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uln-sU-E4p">
-                                <rect key="frame" x="226" y="290" width="169" height="30"/>
-                                <state key="normal" title="Go To Tab Bar Controller">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="16g-fN-wir"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -135,7 +126,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="show" id="cDa-Zt-msm"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="TabBarSegue" id="cDa-Zt-msm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMI-G0-kk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,7 +157,4 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cDa-Zt-msm"/>
-    </inferredMetricsTieBreakers>
 </document>
