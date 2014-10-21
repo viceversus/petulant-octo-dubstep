@@ -20,7 +20,8 @@ class NewPlayerController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nameEntered(textField: UITextField) {
         println("name entered \(textField.text)")
-        var gameMaster:GameMaster = GameMaster()
-        gameMaster.addPlayer(textField.text)
+        GameMaster.addPlayer(textField.text)
+        
+        self.performSegueWithIdentifier("TabBarSegue", sender: self)
     }
 }
