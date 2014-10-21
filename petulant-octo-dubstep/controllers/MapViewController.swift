@@ -31,7 +31,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         theMap.delegate = self
         theMap.mapType = MKMapType.Standard
         theMap.showsUserLocation = true
-        self.loadEnemyRegions()
+        
+        loadEnemyRegions()
     }
 
     func loadEnemyRegions() {
