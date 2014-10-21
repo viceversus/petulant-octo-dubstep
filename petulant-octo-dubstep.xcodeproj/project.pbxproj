@@ -17,7 +17,7 @@
 		A3D1FE8319F6E11E00F40784 /* PODBattlefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8219F6E11E00F40784 /* PODBattlefield.swift */; };
 		BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */; };
 		BEF7BE6B19F6D80F0003C675 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6A19F6D80F0003C675 /* FirstViewController.swift */; };
-		BEF7BE6D19F6D80F0003C675 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6C19F6D80F0003C675 /* SecondViewController.swift */; };
+		BEF7BE6D19F6D80F0003C675 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6C19F6D80F0003C675 /* ProfileViewController.swift */; };
 		BEF7BE7019F6D80F0003C675 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF7BE6E19F6D80F0003C675 /* Main.storyboard */; };
 		BEF7BE7219F6D80F0003C675 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF7BE7119F6D80F0003C675 /* Images.xcassets */; };
 		BEF7BE7519F6D80F0003C675 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEF7BE7319F6D80F0003C675 /* LaunchScreen.xib */; };
@@ -47,7 +47,7 @@
 		BEF7BE6719F6D80F0003C675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEF7BE6A19F6D80F0003C675 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		BEF7BE6C19F6D80F0003C675 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		BEF7BE6C19F6D80F0003C675 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEF7BE6F19F6D80F0003C675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEF7BE7119F6D80F0003C675 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BEF7BE7419F6D80F0003C675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		A3225B6A19F6DF28001CB749 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BEF7BE6C19F6D80F0003C675 /* SecondViewController.swift */,
+				BEF7BE6C19F6D80F0003C675 /* ProfileViewController.swift */,
 				BEF7BE6A19F6D80F0003C675 /* FirstViewController.swift */,
 				474F87D819F6E5BC00354247 /* NewPlayerController.swift */,
 			);
@@ -320,7 +320,7 @@
 				474F87DB19F6F9C300354247 /* GameMaster.swift in Sources */,
 				A3D1FE7F19F6E0CC00F40784 /* PODMonster.swift in Sources */,
 				A334F7D019F6DFED009BA78D /* PODPlayer.swift in Sources */,
-				BEF7BE6D19F6D80F0003C675 /* SecondViewController.swift in Sources */,
+				BEF7BE6D19F6D80F0003C675 /* ProfileViewController.swift in Sources */,
 				A3D1FE8119F6E0EF00F40784 /* PODRegion.swift in Sources */,
 				BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */,
 				47B5BC8A19F7038100A2B6AC /* World.swift in Sources */,
