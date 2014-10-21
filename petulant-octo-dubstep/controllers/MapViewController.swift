@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  MapViewController.swift
 //  petulant-octo-dubstep
 //
 //  Created by Ken Shimizu on 10/21/14.
@@ -15,6 +15,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var theMap: MKMapView!
     
     var manager:CLLocationManager!
+    var initialLocation:CLLocation!
     
     
     override func viewDidLoad() {
@@ -30,13 +31,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         theMap.delegate = self
         theMap.mapType = MKMapType.Standard
         theMap.showsUserLocation = true
-        self.addRegions()
+        self.loadEnemyRegions()
     }
 
-    func addRegions() {
-        var newRegion = PODRegion(latitude: 37.787093, longitude: -122.397177, radius: 300)
-        var circle = MKCircle(centerCoordinate: newRegion.location.coordinate, radius: newRegion.radius)
-        theMap.addOverlay(circle)
+    func loadEnemyRegions() {
+        for region in World.enemyRegions {
+            var circle = MKCircle(centerCoordinate: region.location.coordinate, radius: region.radius)
+            theMap.addOverlay(circle)
+        }
     }
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
@@ -52,9 +54,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
 
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
-        var span = MKCoordinateSpan(latitudeDelta: 0.2 as CLLocationDegrees, longitudeDelta: 0.2 as CLLocationDegrees)
-        var mapRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: span)
-        mapView.setRegion(mapRegion, animated: true)
+        if ( initialLocation == nil ) {
+            self.initialLocation = userLocation.location;
+            var span = MKCoordinateSpan(latitudeDelta: 0.02 as CLLocationDegrees, longitudeDelta: 0.02 as CLLocationDegrees)
+            var mapRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: span)
+            mapView.setRegion(mapRegion, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

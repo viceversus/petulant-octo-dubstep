@@ -11,10 +11,9 @@ import CoreLocation
 
 class PODRegion {
     var location:CLLocation!
-    var radius:CLLocationDistance!
+    var radius = CLLocationDistance(150)
 
-    init(latitude: Double, longitude: Double, radius: Double) {
+    init(latitude: Double, longitude: Double) {
         self.location = CLLocation(latitude: latitude as CLLocationDegrees, longitude: longitude as CLLocationDegrees)
-        self.radius = CLLocationDistance(radius)
     }
 }
