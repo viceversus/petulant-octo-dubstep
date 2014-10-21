@@ -51,7 +51,7 @@
         <!--Battle-->
         <scene sceneID="HiT-Bx-qNe">
             <objects>
-                <viewController storyboardIdentifier="battleScene" title="Battle" id="JkA-wf-ZzY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="battleScene" title="Battle" id="JkA-wf-ZzY" customClass="BattleViewController" customModule="petulant_octo_dubstep" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oqh-sj-PU3"/>
                         <viewControllerLayoutGuide type="bottom" id="9Q0-Wz-iXw"/>
@@ -59,8 +59,25 @@
                     <view key="view" contentMode="scaleToFill" id="4l1-R8-uFh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Yu-gk-QFa">
+                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Attack" id="awR-2y-ELk">
+                                        <connections>
+                                            <action selector="attack:" destination="JkA-wf-ZzY" id="XWe-cl-1aV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Run" id="udY-py-OV1"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="attackButton" destination="awR-2y-ELk" id="RYw-Nb-dKC"/>
+                        <outlet property="runButton" destination="udY-py-OV1" id="uTJ-8m-DWv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v13-0H-dY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
