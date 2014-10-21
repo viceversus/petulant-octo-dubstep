@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3D5219C6-B565-434C-8B01-C88D421AC9F3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>petulant-octo-dubstep</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0EAD5089DA848D6A372ED62B6439AE3346DEA39</key>
+		<string>github.com:viceversus/petulant-octo-dubstep.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>petulant-octo-dubstep/petulant-octo-dubstep.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0EAD5089DA848D6A372ED62B6439AE3346DEA39</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:viceversus/petulant-octo-dubstep.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0EAD5089DA848D6A372ED62B6439AE3346DEA39</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0EAD5089DA848D6A372ED62B6439AE3346DEA39</string>
+			<key>IDESourceControlWCCName</key>
+			<string>petulant-octo-dubstep</string>
+		</dict>
+	</array>
+</dict>
+</plist>
