@@ -17,7 +17,6 @@ struct World {
         PODRegion(latitude: 37.76, longitude: -122.406),
         PODRegion(latitude: 37.80, longitude: -122.398),
     ]
-}
     static var monsters:[PODMonster] = [
         PODMonster(name: "Scorpibyss"),
         PODMonster(name: "Viperill"),
