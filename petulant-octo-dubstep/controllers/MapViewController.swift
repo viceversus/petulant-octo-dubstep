@@ -36,10 +36,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
 
     func loadEnemyRegions() {
-        for region in World.enemyRegions {
+        for (index, region) in enumerate(World.enemyRegions) {
             var circle = MKCircle(centerCoordinate: region.location.coordinate, radius: region.radius)
             theMap.addOverlay(circle)
+            registerRegionFromOverlay(circle, identifier: "enemy \(index)")
         }
+    }
+
+    func registerRegionFromOverlay(overlay: MKCircle, identifier: String) {
+        // If the overlay's radius is too large, registration fails automatically,
+        // so clamp the radius to the max value.
+        var radius = overlay.radius;
+        if (radius > manager.maximumRegionMonitoringDistance) {
+            radius = manager.maximumRegionMonitoringDistance;
+        }
+
+        // Create the geographic region to be monitored.
+        var geoRegion = CLCircularRegion(circularRegionWithCenter: overlay.coordinate, radius: radius, identifier: identifier)
+        manager.startMonitoringForRegion(geoRegion)
+    }
+
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        var alert = UIAlertView(title: "Entered",
+                                message: "You encounted an enemy named \(region.identifier)",
+                                delegate: nil,
+                                cancelButtonTitle: "Got it!")
+        alert.show()
     }
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
