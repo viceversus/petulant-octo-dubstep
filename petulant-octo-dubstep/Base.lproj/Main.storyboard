@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -207,14 +207,23 @@
                                     <action selector="nameEntered:" destination="jdE-hK-EiP" eventType="editingDidEndOnExit" id="KXO-ac-Gb8"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Monster Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCZ-4L-SVo">
+                                <rect key="frame" x="93" y="93" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="pCZ-4L-SVo" secondAttribute="centerX" id="9KV-Ij-v9v"/>
                             <constraint firstAttribute="centerX" secondItem="U7P-Dz-TR3" secondAttribute="centerX" id="AI4-1D-4du"/>
                             <constraint firstItem="U7P-Dz-TR3" firstAttribute="top" secondItem="5sC-jp-Kzp" secondAttribute="topMargin" constant="30" id="h55-MS-0WD"/>
+                            <constraint firstItem="L1P-U6-Qfx" firstAttribute="top" secondItem="pCZ-4L-SVo" secondAttribute="bottom" constant="40" id="xTF-CS-Z9s"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="monsterName" destination="pCZ-4L-SVo" id="1ht-xl-DvO"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="TabBarSegue" id="cDa-Zt-msm"/>
                     </connections>
                 </viewController>

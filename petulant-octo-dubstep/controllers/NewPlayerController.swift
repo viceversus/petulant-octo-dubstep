@@ -9,9 +9,12 @@
 import UIKit
 
 class NewPlayerController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var monsterName: UILabel!
+    var monster: PODMonster!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assignMonster()
     }
     
     override func didReceiveMemoryWarning() {
@@ -20,8 +23,13 @@ class NewPlayerController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nameEntered(textField: UITextField) {
         println("name entered \(textField.text)")
-        GameMaster.addPlayer(textField.text)
+        GameMaster.addPlayer(textField.text, monster: monster)
         
-        self.performSegueWithIdentifier("TabBarSegue", sender: self)
+        performSegueWithIdentifier("TabBarSegue", sender: self)
+    }
+    
+    func assignMonster() {
+        monster = GameMaster.reserveMonster()
+        monsterName.text = monster.name
     }
 }

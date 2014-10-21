@@ -13,6 +13,7 @@ class PODPlayer {
     var locationManager: CLLocationManager!
     var location: CLLocation?
     var name: String?
+    var monsters: [PODMonster] = []
     
     init() {
         locationManager = CLLocationManager()
