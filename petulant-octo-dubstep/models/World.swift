@@ -18,3 +18,21 @@ struct World {
         PODRegion(latitude: 37.80, longitude: -122.398),
     ]
 }
+    static var monsters:[PODMonster] = [
+        PODMonster(name: "Scorpibyss"),
+        PODMonster(name: "Viperill"),
+        PODMonster(name: "Charizard"),
+        PODMonster(name: "Xatu"),
+        PODMonster(name: "Chimecho"),
+        PODMonster(name: "Kyurem"),
+        PODMonster(name: "Mareep"),
+        PODMonster(name: "Patrat"),
+        PODMonster(name: "Combusken"),
+        PODMonster(name: "Victreebel"),
+        PODMonster(name: "Gigalith"),
+        PODMonster(name: "Spiritzee"),
+        PODMonster(name: "Aegislash"),
+        PODMonster(name: "Excadrill")
+    ]
+    static var activeMonsters:[PODMonster] = []
+}
