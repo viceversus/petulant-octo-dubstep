@@ -9,5 +9,5 @@
 import Foundation
 
 struct World {
-    static var players:[Player] = []
+    static var players:[PODPlayer] = []
 }

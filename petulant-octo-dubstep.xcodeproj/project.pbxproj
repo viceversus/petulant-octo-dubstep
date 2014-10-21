@@ -12,9 +12,9 @@
 		47B5BC8A19F7038100A2B6AC /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B5BC8919F7038100A2B6AC /* World.swift */; };
 		59C386ADF825D40E94FCDDC4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E723455E7687BD6C0D6A9966 /* libPods.a */; };
 		A334F7D019F6DFED009BA78D /* PODPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A334F7CF19F6DFED009BA78D /* PODPlayer.swift */; };
-		A3D1FE7F19F6E0CC00F40784 /* PODMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE7E19F6E0CC00F40784 /* PODMonster.swift */; };
 		A3D1FE8119F6E0EF00F40784 /* PODRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8019F6E0EF00F40784 /* PODRegion.swift */; };
-		A3D1FE8319F6E11E00F40784 /* PODBattlefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8219F6E11E00F40784 /* PODBattlefield.swift */; };
+		BEB0B4FA19F70D3500FA6BC1 /* PODBattlefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8219F6E11E00F40784 /* PODBattlefield.swift */; };
+		BEB0B4FB19F70D3500FA6BC1 /* PODMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE7E19F6E0CC00F40784 /* PODMonster.swift */; };
 		BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */; };
 		BEF7BE6B19F6D80F0003C675 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6A19F6D80F0003C675 /* FirstViewController.swift */; };
 		BEF7BE6D19F6D80F0003C675 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6C19F6D80F0003C675 /* ProfileViewController.swift */; };
@@ -107,10 +107,6 @@
 		A3225B6B19F6DF28001CB749 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				A334F7CF19F6DFED009BA78D /* Player.swift */,
-				A3D1FE7E19F6E0CC00F40784 /* Monster.swift */,
-				A3D1FE8019F6E0EF00F40784 /* Region.swift */,
-				A3D1FE8219F6E11E00F40784 /* Battlefield.swift */,
 				474F87DA19F6F9C300354247 /* GameMaster.swift */,
 				47B5BC8919F7038100A2B6AC /* World.swift */,
 				A334F7CF19F6DFED009BA78D /* PODPlayer.swift */,
@@ -226,7 +222,7 @@
 		BEF7BE5B19F6D80F0003C675 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = viceversus;
 				TargetAttributes = {
 					BEF7BE6219F6D80F0003C675 = {
@@ -315,19 +311,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3D1FE7F19F6E0CC00F40784 /* Monster.swift in Sources */,
-				A334F7D019F6DFED009BA78D /* Player.swift in Sources */,
+				BEB0B4FB19F70D3500FA6BC1 /* PODMonster.swift in Sources */,
 				474F87DB19F6F9C300354247 /* GameMaster.swift in Sources */,
-				A3D1FE7F19F6E0CC00F40784 /* PODMonster.swift in Sources */,
 				A334F7D019F6DFED009BA78D /* PODPlayer.swift in Sources */,
 				BEF7BE6D19F6D80F0003C675 /* ProfileViewController.swift in Sources */,
 				A3D1FE8119F6E0EF00F40784 /* PODRegion.swift in Sources */,
 				BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */,
 				47B5BC8A19F7038100A2B6AC /* World.swift in Sources */,
 				BEF7BE6B19F6D80F0003C675 /* FirstViewController.swift in Sources */,
-				A3D1FE8319F6E11E00F40784 /* Battlefield.swift in Sources */,
+				BEB0B4FA19F70D3500FA6BC1 /* PODBattlefield.swift in Sources */,
 				474F87D919F6E5BC00354247 /* NewPlayerController.swift in Sources */,
-				A3D1FE8319F6E11E00F40784 /* PODBattlefield.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
