@@ -7,6 +7,14 @@
 //
 
 import Foundation
+import CoreLocation
 
 class PODRegion {
+    var location:CLLocation!
+    var radius:CLLocationDistance!
+
+    init(latitude: Double, longitude: Double, radius: Double) {
+        self.location = CLLocation(latitude: latitude as CLLocationDegrees, longitude: longitude as CLLocationDegrees)
+        self.radius = CLLocationDistance(radius)
+    }
 }

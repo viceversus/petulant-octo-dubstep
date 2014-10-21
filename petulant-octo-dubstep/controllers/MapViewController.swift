@@ -34,8 +34,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
 
     func addRegions() {
-        var circleLocation = CLLocation(latitude:  37.323778 as CLLocationDegrees, longitude: -122.031622 as CLLocationDegrees)
-        var circle = MKCircle(centerCoordinate: circleLocation.coordinate, radius: 2000 as CLLocationDistance)
+        var newRegion = PODRegion(latitude: 37.787093, longitude: -122.397177, radius: 300)
+        var circle = MKCircle(centerCoordinate: newRegion.location.coordinate, radius: newRegion.radius)
         theMap.addOverlay(circle)
     }
 
