@@ -1,5 +1,5 @@
 //
-//  Battlefield.swift
+//  Region.swift
 //  petulant-octo-dubstep
 //
 //  Created by Chad Jablonski on 10/21/14.
@@ -8,5 +8,5 @@
 
 import Foundation
 
-class Battlefield {
+class PODRegion {
 }

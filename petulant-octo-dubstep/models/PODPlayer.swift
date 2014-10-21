@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class Player {
+class PODPlayer {
     var locationManager: CLLocationManager!
     var location: CLLocation
     var name: String?

@@ -9,16 +9,19 @@
 import Foundation
 import CoreLocation
 
-class Monster {
+class PODMonster {
     var location: CLLocation
-    var health = 0
+    var name: NSString!
+    var owner: Player
+    var health: Int
+
     
-    init() {
+    init(name: ) {
         self.health = 100
         self.location = CLLocation(latitude: CLLocationDegrees(37.78), longitude: CLLocationDegrees(-122.3))
     }
     
-    func attack(target: Monster) {
+    func attack(target: PODMonster) {
         target.takeDamage(10)
     }
     
