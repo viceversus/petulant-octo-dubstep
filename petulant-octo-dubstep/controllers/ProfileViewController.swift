@@ -9,12 +9,19 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var monstersTable: UITableView!
     var monsters: [PODMonster] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createMonsters()
+        if World.players.count > 0 {
+            playerNameLabel.text = World.players[0].name
+        } else {
+            playerNameLabel.text = "The Man with No Name"
+        }
+
         self.monstersTable.delegate = self
         self.monstersTable.dataSource = self
     }
