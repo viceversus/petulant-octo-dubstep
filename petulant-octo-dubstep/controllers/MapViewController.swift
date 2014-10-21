@@ -9,13 +9,16 @@
 import UIKit
 import CoreLocation
 import MapKit
+import CoreMotion
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var theMap: MKMapView!
     
     var manager:CLLocationManager!
+    var pedometer:CMPedometer!
     var initialLocation:CLLocation!
+    var stepsNeeded = 15
     
     
     override func viewDidLoad() {
@@ -31,6 +34,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         theMap.delegate = self
         theMap.mapType = MKMapType.Standard
         theMap.showsUserLocation = true
+
+        pedometer = CMPedometer()
         
         loadEnemyRegions()
     }
@@ -43,7 +48,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
 
-    func registerRegionFromOverlay(overlay: MKCircle, identifier: String) {
+    func registerRegionFromOverlay(overlay: MKCircle, identifier: NSString) {
         // If the overlay's radius is too large, registration fails automatically,
         // so clamp the radius to the max value.
         var radius = overlay.radius;
@@ -57,10 +62,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
 
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        pedometer.startPedometerUpdatesFromDate(NSDate(),
+                                                withHandler: { data, error in
+                                                    if(data.numberOfSteps.integerValue >= self.stepsNeeded) {
+                                                        var alert = UIAlertView(title: "Monster!!!",
+                                                            message: "You encounted a monster",
+                                                            delegate: nil,
+                                                            cancelButtonTitle: "Fight it!")
+                                                        alert.show()
+                                                    }
+                                                }
+        )
+
+    }
+
+    func checkForMonster(numberOfSteps: Int, timestamp: NSDate, error: NSError){
         var alert = UIAlertView(title: "Entered",
-                                message: "You encounted an enemy named \(region.identifier)",
-                                delegate: nil,
-                                cancelButtonTitle: "Got it!")
+            message: "You encounted a monster",
+            delegate: nil,
+            cancelButtonTitle: "Fight it!")
         alert.show()
     }
 
