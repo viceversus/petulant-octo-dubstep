@@ -30,16 +30,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-sr-F8P">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-sr-F8P">
                                 <rect key="frame" x="-37" y="0.0" width="637" height="551"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="4a5-sr-F8P" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Fb0-yk-L7J"/>
+                            <constraint firstAttribute="trailing" secondItem="4a5-sr-F8P" secondAttribute="trailing" id="X5D-Jd-drb"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="4a5-sr-F8P" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="sJ9-cx-BXo"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="4a5-sr-F8P" secondAttribute="bottom" id="x9L-qu-eLC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
