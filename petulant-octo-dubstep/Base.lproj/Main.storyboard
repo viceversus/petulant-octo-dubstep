@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -108,7 +109,7 @@
         <!--New Player-->
         <scene sceneID="r5q-Ws-WcH">
             <objects>
-                <viewController title="New Player" id="jdE-hK-EiP" sceneMemberID="viewController">
+                <viewController title="New Player" id="jdE-hK-EiP" customClass="NewPlayerController" customModule="petulant_octo_dubstep" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7t-3x-8d0"/>
                         <viewControllerLayoutGuide type="bottom" id="L1P-U6-Qfx"/>
@@ -117,10 +118,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SPLASH SCREEN" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-Dz-TR3">
-                                <rect key="frame" x="241" y="42" width="138" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="U7P-Dz-TR3">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="58g-vj-rbe"/>
+                                    <constraint firstAttribute="width" constant="300" id="D5l-6g-m36"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="nameEntered:" destination="jdE-hK-EiP" eventType="editingDidEndOnExit" id="KXO-ac-Gb8"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uln-sU-E4p">
                                 <rect key="frame" x="226" y="290" width="169" height="30"/>
@@ -133,6 +141,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="U7P-Dz-TR3" secondAttribute="centerX" id="AI4-1D-4du"/>
+                            <constraint firstItem="U7P-Dz-TR3" firstAttribute="top" secondItem="5sC-jp-Kzp" secondAttribute="topMargin" constant="30" id="h55-MS-0WD"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="show" id="cDa-Zt-msm"/>

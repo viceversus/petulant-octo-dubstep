@@ -8,19 +8,17 @@
 
 import UIKit
 
-class NewPlayerController: UIViewController {
-    
-    @IBOutlet var nameTextField: UITextField?
+class NewPlayerController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func nameEntered(textField: UITextField) {
+        println("name entered \(textField.text)")
+    }
 }
