@@ -30,6 +30,31 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, MKMapVie
         theMap.delegate = self
         theMap.mapType = MKMapType.Standard
         theMap.showsUserLocation = true
+        self.addRegions()
+    }
+
+    func addRegions() {
+        var circleLocation = CLLocation(latitude:  37.323778 as CLLocationDegrees, longitude: -122.031622 as CLLocationDegrees)
+        var circle = MKCircle(centerCoordinate: circleLocation.coordinate, radius: 2000 as CLLocationDistance)
+        theMap.addOverlay(circle)
+    }
+
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKCircle {
+            var circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor.redColor()
+            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
+            circle.lineWidth = 1
+            return circle
+        } else {
+            return nil
+        }
+    }
+
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+        var span = MKCoordinateSpan(latitudeDelta: 0.2 as CLLocationDegrees, longitudeDelta: 0.2 as CLLocationDegrees)
+        var mapRegion = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: span)
+        mapView.setRegion(mapRegion, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
