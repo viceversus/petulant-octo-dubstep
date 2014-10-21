@@ -30,6 +30,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-sr-F8P">
+                                <rect key="frame" x="-37" y="0.0" width="637" height="551"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -41,6 +44,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="theMap" destination="4a5-sr-F8P" id="bUF-1b-rTb"/>
                         <segue destination="JkA-wf-ZzY" kind="showDetail" id="F7t-jh-g7p"/>
                     </connections>
                 </viewController>
