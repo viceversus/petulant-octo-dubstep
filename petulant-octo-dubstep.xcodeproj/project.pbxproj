@@ -1,0 +1,67 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXGroup section */
+		BE70FF3E19F6D4AB00C6A429 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		BE70FF3F19F6D4AB00C6A429 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = BE70FF4219F6D4AB00C6A429 /* Build configuration list for PBXProject "petulant-octo-dubstep" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BE70FF3E19F6D4AB00C6A429;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		BE70FF4319F6D4AB00C6A429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		BE70FF4419F6D4AB00C6A429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE70FF4219F6D4AB00C6A429 /* Build configuration list for PBXProject "petulant-octo-dubstep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE70FF4319F6D4AB00C6A429 /* Debug */,
+				BE70FF4419F6D4AB00C6A429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE70FF3F19F6D4AB00C6A429 /* Project object */;
+}
