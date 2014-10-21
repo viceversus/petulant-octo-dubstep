@@ -23,7 +23,7 @@ class PODMonster {
     
     init(name: NSString, player: PODPlayer) {
         self.health = 120
-        self.location = player.location
+        self.location = player.location!
         self.name = name
         self.owner = player
     }
