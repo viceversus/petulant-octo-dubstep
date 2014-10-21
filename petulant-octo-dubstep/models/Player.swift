@@ -7,6 +7,14 @@
 //
 
 import Foundation
+import CoreLocation
+
 
 class Player {
+    var locationManager: CLLocationManager!
+    var location: CLLocation
+    
+    init() {
+        location = locationManager.location
+    }
 }

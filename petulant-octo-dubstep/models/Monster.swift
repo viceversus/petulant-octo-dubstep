@@ -9,4 +9,5 @@
 import Foundation
 
 class Monster {
+    var health = 100
 }
