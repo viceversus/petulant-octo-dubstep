@@ -12,13 +12,20 @@ import CoreLocation
 class PODMonster {
     var location: CLLocation
     var name: NSString!
-    var owner: Player
+    var owner: PODPlayer?
     var health: Int
-
     
-    init(name: ) {
+    init(name: NSString) {
         self.health = 100
         self.location = CLLocation(latitude: CLLocationDegrees(37.78), longitude: CLLocationDegrees(-122.3))
+        self.name = name
+    }
+    
+    init(name: NSString, player: PODPlayer) {
+        self.health = 120
+        self.location = player.location
+        self.name = name
+        self.owner = player
     }
     
     func attack(target: PODMonster) {
