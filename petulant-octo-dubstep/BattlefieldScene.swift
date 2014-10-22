@@ -43,7 +43,16 @@ class BattlefieldScene : SKScene {
     }
 
     func createEnemyMonster(player: PODPlayer) {
-        let spriteName = player.currentMonster().imageGroup
+        let monster    = World.players[0].currentMonster()
+        let spriteName = monster.imageGroup
+        
+        let delay = 0.1
+        frames = []
+        for frame in monster.idleFrames() {
+            frames.append(SKAction.setTexture(SKTexture(imageNamed: frame)))
+            frames.append(SKAction.waitForDuration(delay))
+        }
+        idleAnimation = SKAction.sequence(frames)
 
         self.backgroundColor = SKColor.whiteColor()
         self.enemyMonster = SKSpriteNode(imageNamed: spriteName)
@@ -52,6 +61,7 @@ class BattlefieldScene : SKScene {
         self.enemyMonster.position = CGPointMake(100, 300)
         self.enemyMonster.zPosition = -2
         self.addChild(enemyMonster)
+        enemyMonster.runAction(SKAction.repeatActionForever(idleAnimation));
     }
 
     override func update(currentTime: CFTimeInterval) {
