@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="petulant_octo_dubstep" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="4a5-sr-F8P" secondAttribute="bottom" id="x9L-qu-eLC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mapIcon" id="acW-dT-cKf" userLabel="Map"/>
                     <connections>
                         <outlet property="theMap" destination="4a5-sr-F8P" id="bUF-1b-rTb"/>
                         <segue destination="JkA-wf-ZzY" kind="showDetail" identifier="segueToBattle" id="F7t-jh-g7p"/>
@@ -175,7 +175,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="monstersTable" destination="f0L-fc-zru" id="pVp-TF-r8h"/>
                         <outlet property="playerNameLabel" destination="h0K-PI-HSj" id="0uF-9P-gme"/>
@@ -254,8 +254,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="mapIcon" width="30" height="30"/>
+        <image name="profileIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="F7t-jh-g7p"/>
