@@ -58,19 +58,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         // Create the geographic region to be monitored.
         var geoRegion = CLCircularRegion(circularRegionWithCenter: overlay.coordinate, radius: radius, identifier: identifier)
-        manager.startMonitoringForRegion(geoRegion)
+        
+        manager.requestStateForRegion(geoRegion)
+    }
+    func locationManager(manager: CLLocationManager!, didDetermineState state: CLRegionState, forRegion region: CLRegion!) {
+        if(state == CLRegionState.Inside) {
+            listenToSteps()
+        } else {
+            manager.startMonitoringForRegion(region)
+        }
+    }
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        listenToSteps()
     }
 
-    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+    func listenToSteps(){
         pedometer.startPedometerUpdatesFromDate(NSDate(),
-                                                withHandler: { data, error in
-                                                    NSLog("took \(data.numberOfSteps.integerValue) steps")
-                                                    if(data.numberOfSteps.integerValue >= self.stepsNeeded) {
-                                                        self.checkForMonster()
-                                                    }
-                                                }
+            withHandler: { data, error in
+                NSLog("took \(data.numberOfSteps.integerValue) steps")
+                if(data.numberOfSteps.integerValue >= self.stepsNeeded) {
+                    self.checkForMonster()
+                }
+            }
         )
-
     }
 
     func checkForMonster(){
