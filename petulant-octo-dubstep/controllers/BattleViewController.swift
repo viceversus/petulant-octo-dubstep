@@ -59,6 +59,7 @@ class BattleViewController: UIViewController {
         if battlefield.actingPlayer.isEqual(battlefield.player1) {
             battleEngine.run(battlefield)
         }
+        self.performSegueWithIdentifier("unwindToMap", sender: self)
     }
     
     func simulateTick() {
@@ -82,8 +83,5 @@ class BattleViewController: UIViewController {
                 self.performSegueWithIdentifier("unwindToMap", sender: self)
         }))
         self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func unwindToMap(segue: UIStoryboardSegue) {
     }
 }
