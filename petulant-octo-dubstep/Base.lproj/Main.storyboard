@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -213,6 +214,21 @@
                                     <action selector="nameEntered:" destination="jdE-hK-EiP" eventType="editingDidEndOnExit" id="KXO-ac-Gb8"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Pk-t5-VJM">
+                                <rect key="frame" x="95" y="50" width="411" height="530"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="HgU-Tf-0Sa"/>
+                                    <constraint firstAttribute="width" secondItem="2Pk-t5-VJM" secondAttribute="height" multiplier="15:8" id="PTV-gM-SVE"/>
+                                    <constraint firstAttribute="width" constant="500" id="xPe-qF-dxq"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HgU-Tf-0Sa"/>
+                                        <exclude reference="PTV-gM-SVE"/>
+                                        <exclude reference="xPe-qF-dxq"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Monster Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCZ-4L-SVo">
                                 <rect key="frame" x="93" y="93" width="114" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -222,13 +238,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2Pk-t5-VJM" firstAttribute="top" secondItem="U7P-Dz-TR3" secondAttribute="top" constant="20" id="1BL-R3-h5L"/>
                             <constraint firstAttribute="centerX" secondItem="pCZ-4L-SVo" secondAttribute="centerX" id="9KV-Ij-v9v"/>
                             <constraint firstAttribute="centerX" secondItem="U7P-Dz-TR3" secondAttribute="centerX" id="AI4-1D-4du"/>
+                            <constraint firstItem="2Pk-t5-VJM" firstAttribute="leading" secondItem="5sC-jp-Kzp" secondAttribute="leadingMargin" constant="20" id="M7e-xZ-opl"/>
+                            <constraint firstItem="2Pk-t5-VJM" firstAttribute="bottom" secondItem="U7P-Dz-TR3" secondAttribute="bottom" constant="277" id="QIt-Iw-6ej"/>
+                            <constraint firstAttribute="centerY" secondItem="2Pk-t5-VJM" secondAttribute="centerY" id="ZKw-gl-X76"/>
+                            <constraint firstAttribute="centerX" secondItem="2Pk-t5-VJM" secondAttribute="centerX" id="gyL-ah-gAg"/>
                             <constraint firstItem="U7P-Dz-TR3" firstAttribute="top" secondItem="5sC-jp-Kzp" secondAttribute="topMargin" constant="30" id="h55-MS-0WD"/>
+                            <constraint firstItem="L1P-U6-Qfx" firstAttribute="top" secondItem="2Pk-t5-VJM" secondAttribute="bottom" constant="20" id="tdC-4z-nd3"/>
+                            <constraint firstItem="2Pk-t5-VJM" firstAttribute="bottom" secondItem="pCZ-4L-SVo" secondAttribute="bottom" constant="20" id="uTZ-CM-BTx"/>
                             <constraint firstItem="L1P-U6-Qfx" firstAttribute="top" secondItem="pCZ-4L-SVo" secondAttribute="bottom" constant="40" id="xTF-CS-Z9s"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1BL-R3-h5L"/>
+                                <exclude reference="QIt-Iw-6ej"/>
+                                <exclude reference="uTZ-CM-BTx"/>
+                                <exclude reference="tdC-4z-nd3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="monsterImage" destination="2Pk-t5-VJM" id="StK-Fh-XwB"/>
                         <outlet property="monsterName" destination="pCZ-4L-SVo" id="1ht-xl-DvO"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="TabBarSegue" id="cDa-Zt-msm"/>
                     </connections>
