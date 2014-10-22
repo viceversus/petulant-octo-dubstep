@@ -42,6 +42,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         loadEnemyRegions()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        listenToSteps()
+    }
+
     func createMonsterAlert() -> UIAlertView {
         var monsterAlert = UIAlertView()
         monsterAlert.title = "Monster!!!"
@@ -60,6 +64,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             dispatch_async(dispatch_get_main_queue()) {
                 self.performSegueWithIdentifier("segueToBattle", sender: self)
             }
+            self.monsterActive = false
         }
 
         monsterAlert.addButtonItem(cancelButton)
