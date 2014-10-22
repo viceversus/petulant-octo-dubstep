@@ -68,8 +68,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             manager.startMonitoringForRegion(region)
         }
     }
+
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         listenToSteps()
+    }
+
+    func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+        stopListeningToSteps()
+    }
+
+    func stopListeningToSteps(){
+        self.pedometer.stopPedometerUpdates()
     }
 
     func listenToSteps(){
@@ -95,7 +104,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     cancelButtonTitle: "Fight it!")
                 alert.show()
             }
-            self.pedometer.stopPedometerUpdates()
+            self.stopListeningToSteps()
         }
     }
 
