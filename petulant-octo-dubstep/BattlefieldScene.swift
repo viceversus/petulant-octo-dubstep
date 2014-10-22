@@ -46,7 +46,7 @@ class BattlefieldScene : SKScene {
     
     
     func createEnemyMonster() {
-        let spriteName = "afrog.png"
+        let spriteName = "VillainCat-Flying-a1.png"
         
         self.backgroundColor = SKColor.whiteColor()
         self.enemyMonster = SKSpriteNode(imageNamed: spriteName)
