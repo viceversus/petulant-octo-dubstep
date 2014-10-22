@@ -64,24 +64,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         pedometer.startPedometerUpdatesFromDate(NSDate(),
                                                 withHandler: { data, error in
+                                                    NSLog("took \(data.numberOfSteps.integerValue) steps")
                                                     if(data.numberOfSteps.integerValue >= self.stepsNeeded) {
-                                                        var alert = UIAlertView(title: "Monster!!!",
-                                                            message: "You encounted a monster",
-                                                            delegate: nil,
-                                                            cancelButtonTitle: "Fight it!")
-                                                        alert.show()
+                                                        self.checkForMonster()
                                                     }
                                                 }
         )
 
     }
 
-    func checkForMonster(numberOfSteps: Int, timestamp: NSDate, error: NSError){
-        var alert = UIAlertView(title: "Entered",
-            message: "You encounted a monster",
-            delegate: nil,
-            cancelButtonTitle: "Fight it!")
-        alert.show()
+    func checkForMonster(){
+        let diceRoll = Int(arc4random_uniform(7))
+        NSLog("rolling dice: \(diceRoll)")
+        if (diceRoll >= 5) {
+            NSLog("triggering monster")
+            dispatch_async(dispatch_get_main_queue()) {
+                var alert = UIAlertView(title: "Monster!!!",
+                    message: "You encounted a monster",
+                    delegate: nil,
+                    cancelButtonTitle: "Fight it!")
+                alert.show()
+            }
+            self.pedometer.stopPedometerUpdates()
+        }
     }
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
