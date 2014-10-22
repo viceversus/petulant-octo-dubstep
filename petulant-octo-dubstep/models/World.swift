@@ -25,7 +25,7 @@ struct World {
         PODMonster(name: "Chimecho", imageGroup: "Dragon", idleMode: "Flying"),
         PODMonster(name: "Kyurem", imageGroup: "GentleBird", idleMode: "Flying"),
         PODMonster(name: "Mareep", imageGroup: "GreenBird", idleMode: "Flying"),
-        PODMonster(name: "Patrat", imageGroup: "VillainEgg", idleMode: "Flying"),
+        PODMonster(name: "Patrat", imageGroup: "WhiteParrot", idleMode: "Flying"),
         PODMonster(name: "Combusken", imageGroup: "VillainEgg", idleMode: "Flying"),
         PODMonster(name: "Victreebel", imageGroup: "VillainEgg", idleMode: "Flying"),
         PODMonster(name: "Gigalith", imageGroup: "VillainEgg", idleMode: "Flying"),
