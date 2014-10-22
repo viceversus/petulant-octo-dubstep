@@ -21,7 +21,7 @@ struct World {
         PODMonster(name: "Scorpibyss", imageGroup: "VillainEgg", idleMode: "Flying"),
         PODMonster(name: "Viperill", imageGroup: "VillainCat", idleMode: "Flying"),
         PODMonster(name: "Charizard", imageGroup: "DarkSkull", idleMode: "Flying"),
-        PODMonster(name: "Xatu", imageGroup: "VillainEgg", idleMode: "Flying"),
+        PODMonster(name: "Xatu", imageGroup: "Eagle", idleMode: "Flying"),
         PODMonster(name: "Chimecho", imageGroup: "VillainEgg", idleMode: "Flying"),
         PODMonster(name: "Kyurem", imageGroup: "VillainEgg", idleMode: "Flying"),
         PODMonster(name: "Mareep", imageGroup: "VillainEgg", idleMode: "Flying"),
