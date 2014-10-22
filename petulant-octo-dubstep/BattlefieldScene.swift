@@ -18,7 +18,7 @@ class BattlefieldScene : SKScene {
     
     override func didMoveToView(view: SKView) {
         if !contentCreated {
-            GameMaster.addPlayer("TestPlayer", monster: PODMonster(name: "Squirtle"))
+            GameMaster.addPlayer("TestPlayer", monster: GameMaster.reserveMonster())
             createContent()
         }
     }
@@ -33,7 +33,7 @@ class BattlefieldScene : SKScene {
 
     
     func createPlayerMonster() {
-        let spriteName = World.players[0].currentMonster.spriteName
+        let spriteName = World.players[0].currentMonster.spriteName()
         
         self.backgroundColor = SKColor.whiteColor()
         self.playerMonster = SKSpriteNode(imageNamed: spriteName)

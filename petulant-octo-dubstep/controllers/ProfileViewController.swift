@@ -15,13 +15,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createMonsters()
-        if World.players.count > 0 {
-            playerNameLabel.text = World.players[0].name
-        } else {
-            playerNameLabel.text = "The Man with No Name"
-        }
-
+        let player:PODPlayer = World.players.first!
+        playerNameLabel.text = player.name
+        self.monsters.append(player.monsters.first!)
         self.monstersTable.delegate = self
         self.monstersTable.dataSource = self
     }
@@ -37,12 +33,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.textLabel.text = monster.name
         cell.detailTextLabel?.text = "\(monster.health)"
         return cell
-    }
-    
-    func createMonsters() {
-        for index in 1...6 {
-            self.monsters.append(PODMonster(name: "Monster \(index)"));
-        }
     }
 }
 

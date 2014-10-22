@@ -14,21 +14,24 @@ class PODMonster {
     var name: NSString!
     var owner: PODPlayer?
     var health: Int
-    var spriteName: String
+    var imageGroup: String!
+    var idleMode: String!
     
-    init(name: NSString) {
+    init(name: NSString, imageGroup: String, idleMode: String) {
         self.health = 100
         self.location = CLLocation(latitude: CLLocationDegrees(37.78), longitude: CLLocationDegrees(-122.3))
         self.name = name
-        self.spriteName = "VillainEgg-Flying-a1.png"
+        self.imageGroup = imageGroup
+        self.idleMode = idleMode
     }
     
-    init(name: NSString, player: PODPlayer) {
+    init(name: NSString, player: PODPlayer, imageGroup: String, idleMode: String) {
         self.health = 120
         self.location = player.location!
         self.name = name
         self.owner = player
-        self.spriteName = "VillainEgg-Flying-a1.png"
+        self.imageGroup = imageGroup
+        self.idleMode = idleMode
     }
     
     func attack(target: PODMonster) {
@@ -44,5 +47,9 @@ class PODMonster {
     
     func isDead() -> Bool {
         return self.health <= 0
+    }
+    
+    func spriteName() -> String {
+        return "\(imageGroup)-\(idleMode)-a1.png"
     }
 }
