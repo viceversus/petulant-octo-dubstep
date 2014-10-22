@@ -18,7 +18,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var manager:CLLocationManager!
     var pedometer:CMPedometer!
     var initialLocation:CLLocation!
-    var monsterAlert:UIAlertView!
     var monsterActive:Bool!
     var stepsNeeded = 5
     
@@ -40,7 +39,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         pedometer = CMPedometer()
 
-        monsterAlert = UIAlertView()
+        loadEnemyRegions()
+    }
+
+    func createMonsterAlert() -> UIAlertView {
+        var monsterAlert = UIAlertView()
         monsterAlert.title = "Monster!!!"
         monsterAlert.message = "You encountered a monster"
         monsterAlert.cancelButtonIndex = 0
@@ -62,7 +65,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         monsterAlert.addButtonItem(cancelButton)
         monsterAlert.addButtonItem(fightButton)
 
-        loadEnemyRegions()
+        return monsterAlert
     }
 
     func loadEnemyRegions() {
@@ -123,8 +126,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if (diceRoll >= 2) {
             self.monsterActive = true
             NSLog("triggering monster")
+            var monsterAlert = self.createMonsterAlert()
             dispatch_async(dispatch_get_main_queue()) {
-                self.monsterAlert.show()
+                monsterAlert.show()
             }
         }
     }
