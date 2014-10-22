@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jdE-hK-EiP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -30,7 +30,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-sr-F8P">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-sr-F8P">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                         </subviews>
@@ -68,15 +68,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Yu-gk-QFa">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottomRight" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Yu-gk-QFa">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem title="Run" id="udY-py-OV1">
+                                        <connections>
+                                            <segue destination="9pv-A4-QxB" kind="show" id="ZKr-Xz-zID"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Attack" id="awR-2y-ELk">
                                         <connections>
                                             <action selector="attack:" destination="JkA-wf-ZzY" id="XWe-cl-1aV"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Run" id="udY-py-OV1"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -266,5 +270,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xct-fa-ziy"/>
+        <segue reference="ZKr-Xz-zID"/>
     </inferredMetricsTieBreakers>
 </document>

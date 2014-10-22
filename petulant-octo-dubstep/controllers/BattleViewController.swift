@@ -23,7 +23,7 @@ class BattleViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib
         
         // Configure the view.
-        self.spriteView = SKView(frame: CGRectMake(0.0, 0.0, 1024.0, 768.0))
+        self.spriteView = SKView(frame: CGRectMake(0.0, 0.0, 1024.0, 525.0))
         self.spriteView.showsFPS = true
         self.spriteView.showsNodeCount = true
             
@@ -48,5 +48,6 @@ class BattleViewController: UIViewController {
     
     @IBAction func attack(sender: AnyObject) {
         println("ATTACK!")
+        self.scene.playerMonsterAttack()
     }
 }
