@@ -16,10 +16,11 @@ class PODPlayer {
     var monsters: [PODMonster] = []
     var currentMonster: PODMonster
     
-    init() {
+    init(name: String, monster: PODMonster) {
         locationManager = CLLocationManager()
         location = locationManager.location
-        monsters = [PODMonster(name: "Squirtle")]
-        currentMonster = monsters[0]
+        currentMonster = monster
+        monsters.append(monster)
+        self.name = name
     }
 }

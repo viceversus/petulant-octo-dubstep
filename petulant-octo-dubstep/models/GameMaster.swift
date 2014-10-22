@@ -12,9 +12,7 @@ class GameMaster {
     var players:[PODPlayer] = []
 
     class func addPlayer(name: NSString, monster: PODMonster) -> PODPlayer {
-        var player = PODPlayer()
-        player.name = name
-        player.monsters.append(monster)
+        var player = PODPlayer(name: name, monster: monster)
         World.players.append(player)
 
         return player
