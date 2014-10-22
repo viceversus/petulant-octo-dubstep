@@ -17,6 +17,8 @@ class BattlefieldScene : SKScene {
     var enemyMonster: SKSpriteNode!
     var idleAnimation: SKAction!
     var frames: [SKAction]!
+    var enemyDamage: SKLabelNode!
+    var playerDamage: SKLabelNode!
 
     func createPlayerMonster(player: PODPlayer) {
         let monster    = World.players[0].currentMonster()
@@ -63,11 +65,25 @@ class BattlefieldScene : SKScene {
     }
 
 
-    func playerMonsterAttack() {
+    func playerMonsterAttack(damage: Int) {
+        playerDamage?.removeFromParent()
+        playerDamage = SKLabelNode()
+        playerDamage.text = String(damage)
+        playerDamage.position = CGPointMake(250, 100)
+        playerDamage.fontColor = SKColor.redColor()
+        playerDamage.fontName = "TrebuchetMS-Bold"
+        self.addChild(playerDamage)
         attackAnimation(playerMonster)
     }
 
-    func enemyMonsterAttack() {
+    func enemyMonsterAttack(damage: Int) {
+        enemyDamage?.removeFromParent()
+        enemyDamage = SKLabelNode()
+        enemyDamage.text = String(damage)
+        enemyDamage.position = CGPointMake(50, 300)
+        enemyDamage.fontColor = SKColor.redColor()
+        enemyDamage.fontName = "TrebuchetMS-Bold"
+        self.addChild(enemyDamage)
         attackAnimation(enemyMonster)
     }
 }

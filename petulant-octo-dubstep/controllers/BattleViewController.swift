@@ -48,8 +48,8 @@ class BattleViewController: UIViewController {
     
     @IBAction func attack(sender: UIBarButtonItem) {
         if battlefield.actingPlayer.isEqual(battlefield.player1) {
-            battleEngine.attack(battlefield, combatant: battlefield.player1, recipient: battlefield.player2)
-            self.scene.playerMonsterAttack()
+            let damage = battleEngine.attack(battlefield, combatant: battlefield.player1, recipient: battlefield.player2)
+            self.scene.playerMonsterAttack(damage)
             simulateTick()
             
         }
@@ -64,8 +64,8 @@ class BattleViewController: UIViewController {
     
     func simulateTick() {
         if !battleEngine.battleEnded {
-            battleEngine.simulateAttack(battlefield, combatant: battlefield.player2, recipient: battlefield.player1)
-            self.scene.enemyMonsterAttack()
+            let damage = battleEngine.simulateAttack(battlefield, combatant: battlefield.player2, recipient: battlefield.player1)
+            self.scene.enemyMonsterAttack(damage)
             if battleEngine.battleEnded {
                 self.userBattleEnded("You Lost")
             }

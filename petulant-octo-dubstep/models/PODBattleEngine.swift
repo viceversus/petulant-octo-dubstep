@@ -15,17 +15,20 @@ class PODBattleEngine {
         
     }
     
-    func attack(battlefield: PODBattlefield, combatant: PODPlayer, recipient: PODPlayer) {
-        combatant.currentMonster().giveDamage(recipient.currentMonster(), damage:calculateDamage())
+    func attack(battlefield: PODBattlefield, combatant: PODPlayer, recipient: PODPlayer) -> Int {
+        let damage = calculateDamage()
+        combatant.currentMonster().giveDamage(recipient.currentMonster(), damage:damage)
         NSLog("combatant hp is: \(combatant.currentMonster().health)")
         NSLog("recipient hp is: \(recipient.currentMonster().health)")
         if (recipient.currentMonster().isDead()) {
             battleEnded = true
         }
         battlefield.switchActingPlayer()
+        return damage
     }
     
-    func simulateAttack(battlefield: PODBattlefield, combatant: PODPlayer, recipient: PODPlayer) {
+    func simulateAttack(battlefield: PODBattlefield, combatant: PODPlayer, recipient: PODPlayer) -> Int {
+        let damage = calculateDamage()
         combatant.currentMonster().giveDamage(recipient.currentMonster(), damage:calculateDamage())
         NSLog("combatant hp is: \(combatant.currentMonster().health)")
         NSLog("recipient hp is: \(recipient.currentMonster().health)")
@@ -33,6 +36,7 @@ class PODBattleEngine {
             battleEnded = true
         }
         battlefield.switchActingPlayer()
+        return damage
     }
     
     private func calculateDamage() -> Int {
