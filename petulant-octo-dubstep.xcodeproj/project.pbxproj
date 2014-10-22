@@ -49,6 +49,7 @@
 		A3D1FE8219F6E11E00F40784 /* PODBattlefield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PODBattlefield.swift; sourceTree = "<group>"; };
 		A3D1FE8419F6E61D00F40784 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		A3D1FE8819F6FD2A00F40784 /* BattlefieldScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlefieldScene.swift; sourceTree = "<group>"; };
+		B8BF198E19F81F48006FBB87 /* petulant-octo-dubstep-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "petulant-octo-dubstep-Bridging-Header.h"; sourceTree = "<group>"; };
 		BEF7BE6319F6D80F0003C675 /* petulant-octo-dubstep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "petulant-octo-dubstep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF7BE6719F6D80F0003C675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 				BEF7BE6419F6D80F0003C675 /* Products */,
 				0FA695463F60CE1989D4488B /* Pods */,
 				61ED95B80AD049B708A75AB6 /* Frameworks */,
+				B8BF198E19F81F48006FBB87 /* petulant-octo-dubstep-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -466,9 +468,12 @@
 			baseConfigurationReference = C05D08D2A41103E4C6A62109 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "petulant-octo-dubstep/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "petulant-octo-dubstep-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -477,9 +482,11 @@
 			baseConfigurationReference = 637B9105724CC0DF19A6C5F3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "petulant-octo-dubstep/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "petulant-octo-dubstep-Bridging-Header.h";
 			};
 			name = Release;
 		};
