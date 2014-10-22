@@ -20,7 +20,7 @@ class PODMonster {
         self.health = 100
         self.location = CLLocation(latitude: CLLocationDegrees(37.78), longitude: CLLocationDegrees(-122.3))
         self.name = name
-        self.spriteName = "afrog.png"
+        self.spriteName = "VillainEgg-Flying-a1.png"
     }
     
     init(name: NSString, player: PODPlayer) {
@@ -28,7 +28,7 @@ class PODMonster {
         self.location = player.location!
         self.name = name
         self.owner = player
-        self.spriteName = "afrog.png"
+        self.spriteName = "VillainEgg-Flying-a1.png"
     }
     
     func attack(target: PODMonster) {
