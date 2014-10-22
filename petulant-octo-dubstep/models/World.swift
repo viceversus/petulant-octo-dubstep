@@ -26,12 +26,7 @@ struct World {
         PODMonster(name: "Kyurem", imageGroup: "GentleBird", idleMode: "Flying"),
         PODMonster(name: "Mareep", imageGroup: "GreenBird", idleMode: "Flying"),
         PODMonster(name: "Patrat", imageGroup: "WhiteParrot", idleMode: "Flying"),
-        PODMonster(name: "Combusken", imageGroup: "VillainEgg", idleMode: "Flying"),
-        PODMonster(name: "Victreebel", imageGroup: "VillainEgg", idleMode: "Flying"),
-        PODMonster(name: "Gigalith", imageGroup: "VillainEgg", idleMode: "Flying"),
-        PODMonster(name: "Spiritzee", imageGroup: "VillainEgg", idleMode: "Flying"),
-        PODMonster(name: "Aegislash", imageGroup: "VillainEgg", idleMode: "Flying"),
-        PODMonster(name: "Excadrill", imageGroup: "VillainEgg", idleMode: "Flying")
+        PODMonster(name: "Combusken", imageGroup: "VillainSkull", idleMode: "Flying")
     ]
     static var activeMonsters:[PODMonster] = []
 }
