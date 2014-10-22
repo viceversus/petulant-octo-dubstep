@@ -38,7 +38,7 @@ class BattleViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.scene = BattlefieldScene()
         self.scene.createPlayerMonster(battlefield.player1)
-        self.scene.createEnemyMonster(battlefield.player1)
+        self.scene.createEnemyMonster(battlefield.player2)
         
         /* Set the scale mode to scale to fit the window */
         self.scene.scaleMode = .AspectFill

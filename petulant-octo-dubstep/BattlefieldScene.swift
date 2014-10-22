@@ -21,7 +21,7 @@ class BattlefieldScene : SKScene {
     var playerDamage: SKLabelNode!
 
     func createPlayerMonster(player: PODPlayer) {
-        let monster    = World.players[0].currentMonster()
+        let monster    = player.currentMonster()
         let spriteName = monster.imageGroup
 
         let delay = 0.1
@@ -43,7 +43,7 @@ class BattlefieldScene : SKScene {
     }
 
     func createEnemyMonster(player: PODPlayer) {
-        let monster    = World.players[0].currentMonster()
+        let monster    = player.currentMonster()
         let spriteName = monster.imageGroup
         
         let delay = 0.1
