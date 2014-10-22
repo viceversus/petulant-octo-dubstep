@@ -10,6 +10,7 @@ import UIKit
 
 class NewPlayerController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var monsterName: UILabel!
+    @IBOutlet weak var monsterImage: UIImageView!
     var monster: PODMonster!
     
     override func viewDidLoad() {
@@ -31,5 +32,6 @@ class NewPlayerController: UIViewController, UITextFieldDelegate {
     func assignMonster() {
         monster = GameMaster.reserveMonster()
         monsterName.text = monster.name
+        monsterImage.image = UIImage(named: monster.spriteName())
     }
 }

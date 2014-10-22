@@ -210,7 +210,7 @@
                                     <action selector="nameEntered:" destination="jdE-hK-EiP" eventType="editingDidEndOnExit" id="KXO-ac-Gb8"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="DarkSkull-Flying-a1" translatesAutoresizingMaskIntoConstraints="NO" id="2Pk-t5-VJM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Pk-t5-VJM">
                                 <rect key="frame" x="95" y="50" width="411" height="530"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="HgU-Tf-0Sa"/>
@@ -256,6 +256,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="monsterImage" destination="2Pk-t5-VJM" id="StK-Fh-XwB"/>
                         <outlet property="monsterName" destination="pCZ-4L-SVo" id="1ht-xl-DvO"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="TabBarSegue" id="cDa-Zt-msm"/>
                     </connections>
@@ -285,7 +286,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DarkSkull-Flying-a1" width="411" height="402"/>
         <image name="mapIcon" width="24" height="24"/>
         <image name="profileIcon" width="24" height="24"/>
     </resources>
