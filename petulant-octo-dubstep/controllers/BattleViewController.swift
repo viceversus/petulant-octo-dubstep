@@ -83,4 +83,7 @@ class BattleViewController: UIViewController {
         }))
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func unwindToMap(segue: UIStoryboardSegue) {
+    }
 }
