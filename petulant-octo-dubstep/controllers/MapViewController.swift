@@ -18,6 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var manager:CLLocationManager!
     var pedometer:CMPedometer!
     var initialLocation:CLLocation!
+    var monsterAlert:UIAlertView!
     var stepsNeeded = 15
     
     
@@ -36,7 +37,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         theMap.showsUserLocation = true
 
         pedometer = CMPedometer()
-        
+
+        monsterAlert = UIAlertView()
+        monsterAlert.title = "Monster!!!"
+        monsterAlert.message = "You encountered a monster"
+        monsterAlert.cancelButtonIndex = 0
+        var cancelButton = RIButtonItem()
+        cancelButton.label = "Run!"
+
+        var fightButton = RIButtonItem()
+        fightButton.label = "Fight!"
+        fightButton.action = {
+            self.performSegueWithIdentifier("segueToBattle", sender: self)
+        }
+
+        monsterAlert.addButtonItem(cancelButton)
+        monsterAlert.addButtonItem(fightButton)
+
         loadEnemyRegions()
     }
 
@@ -98,11 +115,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if (diceRoll >= 5) {
             NSLog("triggering monster")
             dispatch_async(dispatch_get_main_queue()) {
-                var alert = UIAlertView(title: "Monster!!!",
-                    message: "You encounted a monster",
-                    delegate: nil,
-                    cancelButtonTitle: "Fight it!")
-                alert.show()
+                self.monsterAlert.show()
             }
             self.stopListeningToSteps()
         }
