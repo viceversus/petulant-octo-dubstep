@@ -10,16 +10,19 @@ import Foundation
 import CoreLocation
 
 class PODMonster {
-    var location: CLLocation
+    var originalLocation: CLLocation!
     var name: NSString!
     var owner: PODPlayer?
+    var maxHealth: Int
     var health: Int
     var imageGroup: String!
     var idleMode: String!
     
     init(name: NSString, imageGroup: String, idleMode: String) {
+        var locationManager = CLLocationManager()
+        self.originalLocation = locationManager.location
         self.health = 100
-        self.location = CLLocation(latitude: CLLocationDegrees(37.78), longitude: CLLocationDegrees(-122.3))
+        self.maxHealth = 100
         self.name = name
         self.imageGroup = imageGroup
         self.idleMode = idleMode
@@ -27,15 +30,16 @@ class PODMonster {
     
     init(name: NSString, player: PODPlayer, imageGroup: String, idleMode: String) {
         self.health = 120
-        self.location = player.location!
+        self.maxHealth = 120
+        self.originalLocation = player.location!
         self.name = name
         self.owner = player
         self.imageGroup = imageGroup
         self.idleMode = idleMode
     }
     
-    func attack(target: PODMonster) {
-        target.takeDamage(10)
+    func giveDamage(target: PODMonster, damage: Int) {
+        target.takeDamage(damage)
     }
     
     func takeDamage(value: Int) {
@@ -43,6 +47,10 @@ class PODMonster {
         if self.isDead() {
             self.health = 0
         }
+    }
+    
+    func healDamage(value: Int) {
+        self.health += value
     }
     
     func isDead() -> Bool {

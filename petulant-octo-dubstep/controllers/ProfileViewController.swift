@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var playerNameLabel: UILabel!

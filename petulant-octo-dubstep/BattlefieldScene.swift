@@ -33,7 +33,7 @@ class BattlefieldScene : SKScene {
 
     
     func createPlayerMonster() {
-        let spriteName = World.players[0].currentMonster.spriteName()
+        let spriteName = World.players[0].currentMonster().imageGroup
         
         self.backgroundColor = SKColor.whiteColor()
         self.playerMonster = SKSpriteNode(imageNamed: spriteName)
