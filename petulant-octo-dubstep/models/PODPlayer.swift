@@ -26,7 +26,9 @@ class PODPlayer {
     init(artificialPlayer: Bool) {
         locationManager = CLLocationManager()
         location = locationManager.location
-        monsters.append(GameMaster.reserveMonster())
+        var monster = GameMaster.reserveMonster()
+        monster.spriteName = "VillainEgg-Flying-a1.png"
+        monsters.append(monster)
     }
     
     func isEqual(other: AnyObject) -> Bool {
