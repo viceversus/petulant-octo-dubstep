@@ -27,7 +27,7 @@ class PODPlayer {
         locationManager = CLLocationManager()
         location = locationManager.location
         var monster = GameMaster.reserveMonster()
-        monster.spriteName = "VillainEgg-Flying-a1.png"
+        monster.imageGroup = "VillainEgg-Flying-a1.png"
         monsters.append(monster)
     }
     
