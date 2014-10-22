@@ -50,6 +50,7 @@
                     <connections>
                         <outlet property="theMap" destination="4a5-sr-F8P" id="bUF-1b-rTb"/>
                         <segue destination="JkA-wf-ZzY" kind="showDetail" id="F7t-jh-g7p"/>
+                        <segue destination="JkA-wf-ZzY" kind="show" identifier="segueToBattle" id="tu7-KJ-9tB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -271,5 +272,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Xct-fa-ziy"/>
         <segue reference="ZKr-Xz-zID"/>
+        <segue reference="tu7-KJ-9tB"/>
     </inferredMetricsTieBreakers>
 </document>

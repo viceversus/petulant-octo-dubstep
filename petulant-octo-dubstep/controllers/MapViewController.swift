@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 import CoreMotion
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIAlertViewDelegate {
 
     @IBOutlet weak var theMap: MKMapView!
     
@@ -97,14 +97,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         NSLog("rolling dice: \(diceRoll)")
         if (diceRoll >= 5) {
             NSLog("triggering monster")
+            var alert = UIAlertView(title: "Monster!!!",
+                message: "You encounted a monster",
+                delegate: self,
+                cancelButtonTitle: "Run!",
+                otherButtonTitles: "Fight!")
             dispatch_async(dispatch_get_main_queue()) {
-                var alert = UIAlertView(title: "Monster!!!",
-                    message: "You encounted a monster",
-                    delegate: nil,
-                    cancelButtonTitle: "Fight it!")
                 alert.show()
             }
             self.stopListeningToSteps()
+        }
+    }
+
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if(buttonIndex == 1) {
+            self.performSegueWithIdentifier("segueToBattle", sender: self)
         }
     }
 
