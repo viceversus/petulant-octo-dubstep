@@ -14,13 +14,30 @@ class PODPlayer {
     var location: CLLocation?
     var name: String?
     var monsters: [PODMonster] = []
-    var currentMonster: PODMonster
     
     init(name: String, monster: PODMonster) {
         locationManager = CLLocationManager()
         location = locationManager.location
-        currentMonster = monster
         monsters.append(monster)
         self.name = name
+        monsters = []
+    }
+    
+    init(artificialPlayer: Bool) {
+        locationManager = CLLocationManager()
+        location = locationManager.location
+        monsters.append(GameMaster.reserveMonster())
+    }
+    
+    func isEqual(other: AnyObject) -> Bool {
+        if self === other {
+            return true
+        }
+
+        return false
+    }
+    
+    func currentMonster() -> PODMonster {
+        return monsters[0]
     }
 }

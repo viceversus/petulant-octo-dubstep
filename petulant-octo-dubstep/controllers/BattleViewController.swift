@@ -12,15 +12,14 @@ import SpriteKit
 class BattleViewController: UIViewController {
     @IBOutlet weak var attackButton: UIBarButtonItem!
     @IBOutlet weak var runButton: UIBarButtonItem!
+    var battleEngine: PODBattleEngine = PODBattleEngine()
+    var battlefield: PODBattlefield!
     
     var scene: BattlefieldScene!
     var spriteView: SKView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        var battlefield = PODBattlefield()
-        // Do any additional setup after loading the view, typically from a nib
         
         // Configure the view.
         self.spriteView = SKView(frame: CGRectMake(0.0, 0.0, 1024.0, 525.0))
@@ -30,6 +29,10 @@ class BattleViewController: UIViewController {
         /* Sprite Kit applies additional optimizations to improve rendering performance */
         self.spriteView.ignoresSiblingOrder = true
         self.view.addSubview(self.spriteView)
+        
+        var userPlayer: PODPlayer = World.players[0]
+        var artificialPlayer: PODPlayer = PODPlayer(artificialPlayer: true)
+        battlefield = PODBattlefield(player1: userPlayer, player2: artificialPlayer)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -41,13 +44,41 @@ class BattleViewController: UIViewController {
         self.spriteView.presentScene(scene)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func attack(sender: UIBarButtonItem) {
+        if battlefield.actingPlayer.isEqual(battlefield.player1) {
+            battleEngine.attack(battlefield, combatant: battlefield.player1, recipient: battlefield.player2)
+            self.scene.playerMonsterAttack()
+            simulateTick()
+            
+        }
     }
     
-    @IBAction func attack(sender: AnyObject) {
-        println("ATTACK!")
-        self.scene.playerMonsterAttack()
+    @IBAction func run(sender: UIBarButtonItem) {
+        if battlefield.actingPlayer.isEqual(battlefield.player1) {
+            battleEngine.run(battlefield)
+        }
+    }
+    
+    func simulateTick() {
+        if !battleEngine.battleEnded {
+            battleEngine.simulateAttack(battlefield, combatant: battlefield.player2, recipient: battlefield.player1)
+            self.scene.playerMonsterAttack()
+            if battleEngine.battleEnded {
+                self.userBattleEnded("You Lost")
+            }
+        } else {
+            self.userBattleEnded("You Won")
+        }
+    }
+    
+    func userBattleEnded(message: String) {
+        var alert = UIAlertController(title: "Battle Over", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(
+            title: "Leave Battle",
+            style: UIAlertActionStyle.Default,
+            handler: {(alert: UIAlertAction!) in
+                self.performSegueWithIdentifier("unwindToMap", sender: self)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

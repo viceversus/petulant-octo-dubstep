@@ -15,6 +15,7 @@
 		A3D1FE8119F6E0EF00F40784 /* PODRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8019F6E0EF00F40784 /* PODRegion.swift */; };
 		A3D1FE8519F6E61D00F40784 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8419F6E61D00F40784 /* BattleViewController.swift */; };
 		A3D1FE8919F6FD2A00F40784 /* BattlefieldScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8819F6FD2A00F40784 /* BattlefieldScene.swift */; };
+		BE185B0719F7234000140D2C /* PODBattleEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE185B0619F7234000140D2C /* PODBattleEngine.swift */; };
 		BEB0B4FA19F70D3500FA6BC1 /* PODBattlefield.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE8219F6E11E00F40784 /* PODBattlefield.swift */; };
 		BEB0B4FB19F70D3500FA6BC1 /* PODMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D1FE7E19F6E0CC00F40784 /* PODMonster.swift */; };
 		BEF7BE6919F6D80F0003C675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		A3D1FE8419F6E61D00F40784 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		A3D1FE8819F6FD2A00F40784 /* BattlefieldScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlefieldScene.swift; sourceTree = "<group>"; };
 		B8BF198E19F81F48006FBB87 /* petulant-octo-dubstep-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "petulant-octo-dubstep-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE185B0619F7234000140D2C /* PODBattleEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PODBattleEngine.swift; sourceTree = "<group>"; };
 		BEF7BE6319F6D80F0003C675 /* petulant-octo-dubstep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "petulant-octo-dubstep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF7BE6719F6D80F0003C675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEF7BE6819F6D80F0003C675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				A3D1FE7E19F6E0CC00F40784 /* PODMonster.swift */,
 				A3D1FE8019F6E0EF00F40784 /* PODRegion.swift */,
 				A3D1FE8219F6E11E00F40784 /* PODBattlefield.swift */,
+				BE185B0619F7234000140D2C /* PODBattleEngine.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB0B4FB19F70D3500FA6BC1 /* PODMonster.swift in Sources */,
+				BE185B0719F7234000140D2C /* PODBattleEngine.swift in Sources */,
 				474F87DB19F6F9C300354247 /* GameMaster.swift in Sources */,
 				A334F7D019F6DFED009BA78D /* PODPlayer.swift in Sources */,
 				BEF7BE6D19F6D80F0003C675 /* ProfileViewController.swift in Sources */,
