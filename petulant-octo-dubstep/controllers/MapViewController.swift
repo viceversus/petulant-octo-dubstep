@@ -19,7 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var pedometer:CMPedometer!
     var initialLocation:CLLocation!
     var monsterAlert:UIAlertView!
-    var stepsNeeded = 15
+    var stepsNeeded = 5
     
     
     override func viewDidLoad() {
@@ -112,7 +112,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func checkForMonster(){
         let diceRoll = Int(arc4random_uniform(7))
         NSLog("rolling dice: \(diceRoll)")
-        if (diceRoll >= 5) {
+        if (diceRoll >= 2) {
             NSLog("triggering monster")
             dispatch_async(dispatch_get_main_queue()) {
                 self.monsterAlert.show()
