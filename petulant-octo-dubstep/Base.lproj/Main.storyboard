@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-sr-F8P">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-sr-F8P">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-iA-tKX">
@@ -66,7 +66,11 @@
                                     <constraint firstAttribute="height" constant="44" id="M8H-5g-ZYD"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Run" id="udY-py-OV1"/>
+                                    <barButtonItem title="Run" id="udY-py-OV1">
+                                        <connections>
+                                            <action selector="run:" destination="JkA-wf-ZzY" id="h3c-6f-tJk"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Attack" id="awR-2y-ELk">
                                         <connections>
                                             <action selector="attack:" destination="JkA-wf-ZzY" id="XWe-cl-1aV"/>
@@ -254,8 +258,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mapIcon" width="30" height="30"/>
-        <image name="profileIcon" width="30" height="30"/>
+        <image name="mapIcon" width="24" height="24"/>
+        <image name="profileIcon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="U5f-jE-zOl"/>
