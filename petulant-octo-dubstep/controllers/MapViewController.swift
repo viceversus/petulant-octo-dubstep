@@ -19,13 +19,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var pedometer:CMPedometer!
     var initialLocation:CLLocation!
     var monsterAlert:UIAlertView!
-    var stepsNeeded = 15
+    var monsterActive:Bool!
+    var stepsNeeded = 5
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        monsterActive = false
+
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -44,11 +46,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         monsterAlert.cancelButtonIndex = 0
         var cancelButton = RIButtonItem()
         cancelButton.label = "Run!"
+        cancelButton.action = {
+            self.monsterActive = false
+        }
 
         var fightButton = RIButtonItem()
         fightButton.label = "Fight!"
         fightButton.action = {
-            self.performSegueWithIdentifier("segueToBattle", sender: self)
+            self.stopListeningToSteps()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.performSegueWithIdentifier("segueToBattle", sender: self)
+            }
         }
 
         monsterAlert.addButtonItem(cancelButton)
@@ -102,7 +110,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         pedometer.startPedometerUpdatesFromDate(NSDate(),
             withHandler: { data, error in
                 NSLog("took \(data.numberOfSteps.integerValue) steps")
-                if(data.numberOfSteps.integerValue >= self.stepsNeeded) {
+                if(data.numberOfSteps.integerValue >= self.stepsNeeded && !self.monsterActive) {
                     self.checkForMonster()
                 }
             }
@@ -112,12 +120,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func checkForMonster(){
         let diceRoll = Int(arc4random_uniform(7))
         NSLog("rolling dice: \(diceRoll)")
-        if (diceRoll >= 5) {
+        if (diceRoll >= 2) {
+            self.monsterActive = true
             NSLog("triggering monster")
             dispatch_async(dispatch_get_main_queue()) {
                 self.monsterAlert.show()
             }
-            self.stopListeningToSteps()
         }
     }
 
