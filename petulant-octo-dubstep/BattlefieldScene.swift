@@ -16,23 +16,7 @@ class BattlefieldScene : SKScene {
     var playerMonster: SKSpriteNode!
     var enemyMonster: SKSpriteNode!
     
-    override func didMoveToView(view: SKView) {
-        if !contentCreated {
-            GameMaster.addPlayer("TestPlayer", monster: GameMaster.reserveMonster())
-            createContent()
-        }
-    }
-
-    
-    func createContent() {
-        createPlayerMonster()
-        createEnemyMonster()
-        attackAnimation(playerMonster)
-        attackAnimation(enemyMonster)
-    }
-
-    
-    func createPlayerMonster() {
+    func createPlayerMonster(player: PODPlayer) {
         let spriteName = World.players[0].currentMonster().imageGroup
         
         self.backgroundColor = SKColor.whiteColor()
@@ -44,9 +28,8 @@ class BattlefieldScene : SKScene {
         self.addChild(playerMonster)
     }
     
-    
-    func createEnemyMonster() {
-        let spriteName = "VillainCat-Flying-a1.png"
+    func createEnemyMonster(player: PODPlayer) {
+        let spriteName = player.currentMonster().imageGroup
         
         self.backgroundColor = SKColor.whiteColor()
         self.enemyMonster = SKSpriteNode(imageNamed: spriteName)

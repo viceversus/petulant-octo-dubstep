@@ -37,6 +37,8 @@ class BattleViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.scene = BattlefieldScene()
+        self.scene.createPlayerMonster(battlefield.player1)
+        self.scene.createEnemyMonster(battlefield.player1)
         
         /* Set the scale mode to scale to fit the window */
         self.scene.scaleMode = .AspectFill
@@ -62,7 +64,7 @@ class BattleViewController: UIViewController {
     func simulateTick() {
         if !battleEngine.battleEnded {
             battleEngine.simulateAttack(battlefield, combatant: battlefield.player2, recipient: battlefield.player1)
-            self.scene.playerMonsterAttack()
+            self.scene.enemyMonsterAttack()
             if battleEngine.battleEnded {
                 self.userBattleEnded("You Lost")
             }
