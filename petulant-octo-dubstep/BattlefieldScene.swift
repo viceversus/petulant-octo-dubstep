@@ -10,15 +10,26 @@ import Foundation
 import SpriteKit
 
 class BattlefieldScene : SKScene {
-    
+
     var battlefield: PODBattlefield!
     var contentCreated = false
     var playerMonster: SKSpriteNode!
     var enemyMonster: SKSpriteNode!
-    
+    var idleAnimation: SKAction!
+    var frames: [SKAction]!
+
     func createPlayerMonster(player: PODPlayer) {
-        let spriteName = World.players[0].currentMonster().imageGroup
-        
+        let monster    = World.players[0].currentMonster()
+        let spriteName = monster.imageGroup
+
+        let delay = 0.1
+        frames = []
+        for frame in monster.idleFrames() {
+            frames.append(SKAction.setTexture(SKTexture(imageNamed: frame)))
+            frames.append(SKAction.waitForDuration(delay))
+        }
+        idleAnimation = SKAction.sequence(frames)
+
         self.backgroundColor = SKColor.whiteColor()
         self.playerMonster = SKSpriteNode(imageNamed: spriteName)
         self.playerMonster.anchorPoint = CGPoint(x: 0, y: 0)
@@ -26,11 +37,12 @@ class BattlefieldScene : SKScene {
         self.playerMonster.position = CGPointMake(100, 25)
         self.playerMonster.zPosition = -2
         self.addChild(playerMonster)
+        playerMonster.runAction(SKAction.repeatActionForever(idleAnimation));
     }
-    
+
     func createEnemyMonster(player: PODPlayer) {
         let spriteName = player.currentMonster().imageGroup
-        
+
         self.backgroundColor = SKColor.whiteColor()
         self.enemyMonster = SKSpriteNode(imageNamed: spriteName)
         self.enemyMonster.anchorPoint = CGPoint(x: 0, y: 0)
@@ -39,31 +51,27 @@ class BattlefieldScene : SKScene {
         self.enemyMonster.zPosition = -2
         self.addChild(enemyMonster)
     }
-    
+
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
-    
-    
+
+
     func attackAnimation(sprite: SKSpriteNode) {
         let shake = SKAction.shake(sprite.position, duration: 0.5, amplitudeX: 12, amplitudeY: 3)
         sprite.runAction(shake)
     }
-    
-    
+
+
     func playerMonsterAttack() {
         attackAnimation(playerMonster)
     }
-    
+
     func enemyMonsterAttack() {
         attackAnimation(enemyMonster)
     }
-    //func createPlayerMonsterHealth() {
-    //    self.mask = [SKSpriteNode spriteNodeWithColor:[SKColor whiteColor] size:CGSizeMake(300,20)];
-    //    SKSpriteNode * sprite = [SKSpriteNode spriteNodeWithImageNamed:@"progressBarImage"];
-    //    [self addChild:sprite];
-    //}
 }
+
 
 extension SKAction {
     class func shake(initialPosition:CGPoint, duration:Float, amplitudeX:Int = 12, amplitudeY:Int = 3) -> SKAction {

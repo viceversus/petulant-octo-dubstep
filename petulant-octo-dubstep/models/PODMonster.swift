@@ -17,7 +17,7 @@ class PODMonster {
     var health: Int
     var imageGroup: String!
     var idleMode: String!
-    
+
     init(name: NSString, imageGroup: String, idleMode: String) {
         var locationManager = CLLocationManager()
         self.originalLocation = locationManager.location
@@ -27,7 +27,7 @@ class PODMonster {
         self.imageGroup = imageGroup
         self.idleMode = idleMode
     }
-    
+
     init(name: NSString, player: PODPlayer, imageGroup: String, idleMode: String) {
         self.health = 120
         self.maxHealth = 120
@@ -37,27 +37,31 @@ class PODMonster {
         self.imageGroup = imageGroup
         self.idleMode = idleMode
     }
-    
+
     func giveDamage(target: PODMonster, damage: Int) {
         target.takeDamage(damage)
     }
-    
+
     func takeDamage(value: Int) {
         self.health -= value
         if self.isDead() {
             self.health = 0
         }
     }
-    
+
     func healDamage(value: Int) {
         self.health += value
     }
-    
+
     func isDead() -> Bool {
         return self.health <= 0
     }
-    
+
     func spriteName() -> String {
         return "\(imageGroup)-\(idleMode)-a1.png"
+    }
+
+    func idleFrames() -> [String] {
+        return Array(map(1...8) { "\(self.imageGroup)-\(self.idleMode)-a\($0).png" })
     }
 }
