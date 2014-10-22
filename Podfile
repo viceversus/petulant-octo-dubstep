@@ -1,4 +1,5 @@
-platform :ios, "7.0"
+source 'https://github.com/CocoaPods/Specs.git'
 
+platform :ios, "7.0"
 pod 'Objection', '1.2.1'
 pod 'UIAlertView-Blocks', '~> 1.0'
