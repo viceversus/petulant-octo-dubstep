@@ -18,16 +18,14 @@ class PODPlayer {
     init(name: String, monster: PODMonster) {
         locationManager = CLLocationManager()
         location = locationManager.location
-        monsters.append(monster)
         self.name = name
-        monsters = []
+        monsters.append(monster)
     }
     
     init(artificialPlayer: Bool) {
         locationManager = CLLocationManager()
         location = locationManager.location
         var monster = GameMaster.reserveMonster()
-        monster.imageGroup = "VillainEgg-Flying-a1.png"
         monsters.append(monster)
     }
     
